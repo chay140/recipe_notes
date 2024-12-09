@@ -1,8 +1,6 @@
-# React + Vite
+# 레시피 노트 (Recipe Notes)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 프로젝트 소개
+자취생 혹은 요리 레세피를 매번 찾기 힘들어하는 사람들을 위한 메모장
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> (프로젝트 완성때까지 작성 중)
