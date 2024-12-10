@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import HeaderMenu from '../components/layout/HeaderMenu';
 
 const Header = () => {
   return (
     <StHeader>
-			<StHeaderContent>
-				{/* 로고 */}
+      <StHeaderContent>
+        {/* 로고 */}
         <StLink to="/">
-          <StImg src="/logo.png" alt="" />
-          <StTitle>레시피 노트</StTitle>
-				</StLink>
-				
-				{/* 태그 메뉴 및 날씨 */}
+          <StImg src="/logo.svg" alt="" />
+          <h1>레시피 노트</h1>
+        </StLink>
 
-				{/* 로그인 메뉴 */}
+        {/* 태그 메뉴 및 날씨 */}
+
+        {/* 메뉴 */}
+        <HeaderMenu />
       </StHeaderContent>
     </StHeader>
   );
@@ -35,13 +37,14 @@ const StHeader = styled.header`
   justify-content: space-between;
   align-content: center;
 
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 5px;
 `;
 
 const StHeaderContent = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 0px 50px;
 `;
@@ -57,6 +60,4 @@ const StImg = styled.img`
   aspect-ratio: 1/1;
 `;
 
-const StTitle = styled.h1`
-  color: var(--color-white);
-`;
+

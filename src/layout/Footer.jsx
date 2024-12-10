@@ -6,14 +6,18 @@ const Footer = () => {
   return (
     <StFooter>
       <StFooterContent>
-        <StA>
+        <StA
+          href="https://github.com/chay140/recipe_notes"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StGitHubIcon />
-          <h4>레시피 노트</h4>
+          <p>레시피 노트</p>
         </StA>
 
         {/* copy right */}
         <StCopyRightText>
-          <h4>© 2024 Recipe Notes. All rights reserved.</h4>
+          <p>© 2024 Recipe Notes. All rights reserved.</p>
         </StCopyRightText>
       </StFooterContent>
     </StFooter>
@@ -23,14 +27,14 @@ const Footer = () => {
 export default Footer;
 
 const StFooter = styled.footer`
-  width: 100%;
-  height: 50px;
-  background: var(--color-secondary);
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
+
+  width: 100%;
+  height: 50px;
+  background: var(--color-secondary);
 `;
 
 const StFooterContent = styled.div`
@@ -40,25 +44,24 @@ const StFooterContent = styled.div`
   align-items: center;
   margin: 0px 50px;
   width: 98%;
+  font-size: 12px;
 `;
 
 const StGitHubIcon = styled(FaGithub)`
-  font-size: 30px;
+  font-size: 24px;
   margin-right: 5px;
 `;
 
 const StA = styled.a`
-  color: var(--color-white);
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 `;
 
 const StCopyRightText = styled.div`
-  height: 30px;
-
-  color: var(--color-white);
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+
+  height: 30px;
 `;
