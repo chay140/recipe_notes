@@ -42,8 +42,8 @@ const StFooterContent = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 50px;
-  width: 98%;
+  margin: 0px auto;
+  width: var(--inner-width);
   font-size: 12px;
 `;
 

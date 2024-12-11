@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { useWeather } from '../../api/weather';
 import LoadingSpinner from '../common/LoadingSpinner';
+import Button from '../common/Button';
 
 const HeaderMenu = () => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const HeaderMenu = () => {
           <p>{weatherData?.main?.temp}°C</p>
         </StWeather>
       )}
-      <button onClick={moveToLogin}>로그인</button>
+      <Button buttonHandler={moveToLogin} label="로그인" />
     </StMenu>
   );
 };
@@ -43,6 +44,8 @@ const StMenu = styled.div`
 `;
 
 const StWeather = styled.div`
+  background-color: var(--color-primary);
+  border-radius: var(--default-radius);
   margin-right: 10px;
   display: flex;
   flex-direction: column;
@@ -57,5 +60,6 @@ const StWeather = styled.div`
 
   p {
     font-size: 12px;
+    margin-bottom: 5px
   }
 `;

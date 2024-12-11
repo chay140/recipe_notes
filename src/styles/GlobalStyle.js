@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import theme from './theme';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -26,6 +27,13 @@ export const GlobalStyle = createGlobalStyle`
     --color-gray8: #f5f5f5;
     --drop-shadow: 3px 4px 13px rgba(0, 0, 0, 0.15);
     --inner-width: 1280px; 
+    --search-width: 320px;
+    --default-radius: 0.25rem;
+
+    @media ${theme.device.start} {
+      --inner-width: 90%;
+      --search-width: 25%;
+    }
   }
 
 	* {

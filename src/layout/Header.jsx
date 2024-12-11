@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import HeaderMenu from '../components/layout/HeaderMenu';
+import SearchInput from '../components/layout/SearchInput';
 
 const Header = () => {
   return (
@@ -12,8 +13,8 @@ const Header = () => {
           <StImg src="/logo.svg" alt="" />
           <h1>레시피 노트</h1>
         </StLink>
-
-        {/* 태그 메뉴 및 날씨 */}
+        {/* 검색창 */}
+        <SearchInput />
 
         {/* 메뉴 */}
         <HeaderMenu />
@@ -41,12 +42,12 @@ const StHeader = styled.header`
 `;
 
 const StHeaderContent = styled.div`
-  width: 100%;
+  width: var(--inner-width);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 50px;
+  margin: 0px auto;
 `;
 
 const StLink = styled(Link)`

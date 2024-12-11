@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 function Home() {
   const navigate = useNavigate();
@@ -9,11 +10,17 @@ function Home() {
   }
   
   return (
-    <>
+    <StHome>
       <h1>홈 화면</h1>
-      <button onClick={moveToMypage}>내 페이지</button>
-    </>
+    </StHome>
   );
 }
 
 export default Home;
+
+const StHome = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
