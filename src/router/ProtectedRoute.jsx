@@ -1,8 +1,8 @@
 import { Navigate, Outlet } from "react-router-dom";
+import { useUserStore } from "../zustand/userStore";
 
 const ProtectedRoute = () => {
-    // TODO 임시 사용자 로그인
-    let isAuthenticated = false;
+    const { isAuthenticated } = useUserStore();
 
     return isAuthenticated ? <Outlet /> : <Navigate to='/login' replace />
 }

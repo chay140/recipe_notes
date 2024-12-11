@@ -4,8 +4,12 @@ import styled from 'styled-components';
 import { useWeather } from '../../api/weather';
 import LoadingSpinner from '../common/LoadingSpinner';
 import Button from '../common/Button';
+import { useUserStore } from '../../zustand/userStore';
+import ProfileMenu from './ProfileMenu';
 
 const HeaderMenu = () => {
+  const { isAuthenticated } = useUserStore();
+
   const navigate = useNavigate();
   const { data: weatherData, isLoading, error } = useWeather();
   let iconUrl = '';
@@ -30,7 +34,7 @@ const HeaderMenu = () => {
           <p>{weatherData?.main?.temp}°C</p>
         </StWeather>
       )}
-      <Button buttonHandler={moveToLogin} label="로그인" />
+      {!isAuthenticated ? <Button buttonHandler={moveToLogin} label="로그인" /> : <ProfileMenu />}
     </StMenu>
   );
 };
