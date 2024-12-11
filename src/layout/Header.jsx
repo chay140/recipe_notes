@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import HeaderMenu from '../components/layout/HeaderMenu';
@@ -10,7 +9,7 @@ const Header = () => {
       <StHeaderContent>
         {/* 로고 */}
         <StLink to="/">
-          <StImg src="/logo.svg" alt="" />
+          <StImg src="/logo.svg" alt="recipe notes logo" />
           <h1>레시피 노트</h1>
         </StLink>
         {/* 검색창 */}

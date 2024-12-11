@@ -1,17 +1,21 @@
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import HorizontalCardList from '../components/home/HorizontalCardList';
+import { FaHeart } from 'react-icons/fa';
 
 function Home() {
   const navigate = useNavigate();
 
   // 내 페이지 가기
   const moveToMypage = () => {
-    navigate("/mypage");
-  }
-  
+    navigate('/mypage');
+  };
+
   return (
     <StHome>
-      <h1>홈 화면</h1>
+      <HorizontalCardList label={`TOP`} icon={<FaHeart color="red"/>} />
+      <HorizontalCardList label={`간단 (3-5분)`} />
+      <HorizontalCardList label={`편의점 조합`} />
     </StHome>
   );
 }
@@ -23,4 +27,4 @@ const StHome = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;

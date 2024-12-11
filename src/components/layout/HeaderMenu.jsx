@@ -51,15 +51,17 @@ const StWeather = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 10px;
 
   img {
     width: 50px;
     aspect-ratio: 1/1;
     margin: 0;
+    filter: drop-shadow(0 0 0.25rem var(--color-gray2));
   }
 
   p {
     font-size: 12px;
-    margin-bottom: 5px
+    margin-bottom: 5px;
   }
 `;

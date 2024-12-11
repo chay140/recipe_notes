@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components';
 
 const LoadingSpinner = () => {
@@ -16,7 +15,7 @@ const StyledSpinner = styled.div`
   width: 24px;
   height: 24px;
   animation: spin 1s linear infinite;
-  margin-right: 20px;
+  margin: 0 30px;
 
   @keyframes spin {
     to {
