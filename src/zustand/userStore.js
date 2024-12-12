@@ -4,7 +4,7 @@ import { persist } from 'zustand/middleware';
 export const useUserStore = create(
   persist((set) => ({
     id: null,
-    name: null,
+    name: "",
     email: null,
     profileImg: null,
     isAuthenticated: true,

@@ -4,6 +4,8 @@ import { useWeather } from '../../api/weather';
 import LoadingSpinner from '../common/LoadingSpinner';
 import { useUserStore } from '../../zustand/userStore';
 import ProfileMenu from './ProfileMenu';
+import Button from '../common/Button';
+
 
 const HeaderMenu = () => {
   const { isAuthenticated } = useUserStore();
@@ -36,7 +38,7 @@ const HeaderMenu = () => {
         </StWeather>
       )}
       {!isAuthenticated ? (
-        <StButton onClick={moveToLogin}>로그인</StButton>
+        <Button onClick={moveToLogin}>로그인</Button>
       ) : (
         <ProfileMenu />
       )}

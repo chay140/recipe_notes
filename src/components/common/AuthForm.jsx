@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import Button from './Button';
 
 const AuthForm = ({ mode, onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -24,7 +25,6 @@ const AuthForm = ({ mode, onSubmit }) => {
         <>
           <p>닉네임</p>
           <StInput
-            id="nickname"
             type="text"
             name="nickname"
             value={formData.nickname}
@@ -37,7 +37,6 @@ const AuthForm = ({ mode, onSubmit }) => {
       )}
       <p>이메일</p>
       <StInput
-        id="email"
         type="text"
         name="email"
         value={formData.email}
@@ -48,7 +47,6 @@ const AuthForm = ({ mode, onSubmit }) => {
       />
       <p>비밀번호</p>
       <StInput
-        id="password"
         type="password"
         name="password"
         value={formData.password}
@@ -57,7 +55,7 @@ const AuthForm = ({ mode, onSubmit }) => {
         autoComplete="off"
         required
       />
-      <StButton>{mode === 'login' ? '로그인' : '회원가입'}</StButton>
+      <Button>{mode === 'login' ? '로그인' : '회원가입'}</Button>
     </StForm>
   );
 };
@@ -81,14 +79,5 @@ const StInput = styled.input`
   padding: 10px;
   margin-top: 5px;
   margin-bottom: 10px;
-  border-radius: var(--default-radius);
-`;
-
-const StButton = styled.button`
-  background-color: var(--color-third);
-  color: var(--color-gray7);
-
-  margin-top: 10px;
-  padding: 15px 10px 10px;
   border-radius: var(--default-radius);
 `;

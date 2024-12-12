@@ -25,6 +25,7 @@ const Header = () => {
 export default Header;
 
 const StHeader = styled.header`
+  z-index: 10;
   position: fixed;
   left: 0;
   top: 0;
@@ -59,5 +60,3 @@ const StImg = styled.img`
   height: 50px;
   aspect-ratio: 1/1;
 `;
-
-

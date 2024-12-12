@@ -23,6 +23,8 @@ const HorizontalCardList = ({ label, icon, list = [] }) => {
             <RecipeCard />
             <RecipeCard />
             <RecipeCard />
+            <RecipeCard />
+            <RecipeCard />
           </>
         ) : (
           <StP>저장된 레시피가 없습니다</StP>
