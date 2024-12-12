@@ -1,4 +1,4 @@
-import { CiHeart } from 'react-icons/ci';
+import { CiStar } from 'react-icons/ci';
 import styled from 'styled-components';
 
 const defaultRecipe = {
@@ -18,23 +18,20 @@ const RecipeCard = ({ recipe = defaultRecipe }) => {
       <StContentWrapper>
         <p>{recipe.content}</p>
       </StContentWrapper>
-      <StLikeNums>
-        <CiHeart size="30px" /> 56
-      </StLikeNums>
+      <CiStar size="30px" />
     </StCard>
   );
 };
 
 export default RecipeCard;
 
-const StCard = styled.div`
+const StCard = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   max-width: 250px;
-  margin: 20px 0;
   padding: 20px;
 
   background-color: var(--color-white);
@@ -47,6 +44,7 @@ const StCard = styled.div`
     width: 150px;
     height: auto;
     border: 0.5px solid var(--color-gray2);
+    border-radius: var(--default-radius);
   }
 `;
 
@@ -73,10 +71,6 @@ const StContentWrapper = styled.div`
   text-overflow: ellipsis;
 
   p {
-    margin: 5px 0;
+    margin: 10px 0;
   }
-`;
-
-const StLikeNums = styled.p`
-  text-align: center;
 `;

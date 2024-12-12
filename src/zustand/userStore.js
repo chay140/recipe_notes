@@ -6,8 +6,7 @@ export const useUserStore = create(
     id: null,
     name: null,
     email: null,
-    profileImg:
-      'https://item.kakaocdn.net/do/991efe6c367092ef02cb0d96373402377154249a3890514a43687a85e6b6cc82',
+    profileImg: null,
     isAuthenticated: true,
     setId: (userId) => set(() => ({ id: userId })),
     setName: (userName) => set(() => ({ name: userName })),

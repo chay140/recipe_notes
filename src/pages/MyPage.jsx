@@ -1,19 +1,19 @@
-import { useNavigate } from "react-router-dom";
+import styled from 'styled-components';
 
 function MyPage() {
-    const navigate = useNavigate();
-    return (
-      <>
-        <h1>내 페이지</h1>
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          홈 화면
-        </button>
-      </>
-    );
+  // 회원정보 수정만
+  return (
+    <StMyPage>
+      <h1>회원정보</h1>
+    </StMyPage>
+  );
 }
 
 export default MyPage;
+
+const StMyPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;

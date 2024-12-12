@@ -24,7 +24,7 @@ const HeaderMenu = () => {
 
   return (
     <StMenu>
-      {isLoading && !error ? (
+      {(!error && isLoading) ? (
         <LoadingSpinner />
       ) : (
         <StWeather>
@@ -53,7 +53,7 @@ const StMenu = styled.div`
 `;
 
 const StWeather = styled.div`
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
   border-radius: var(--default-radius);
   display: flex;
   flex-direction: row;
