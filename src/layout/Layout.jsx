@@ -7,19 +7,15 @@ const Layout = () => {
   return (
     <StPage>
       <Header />
-      <StMain>
+      <main>
         <Outlet />
-      </StMain>
+      </main>
       <Footer />
     </StPage>
   );
 };
 
 export default Layout;
-
-const StMain = styled.main`
-  flex-grow: 1;
-`;
 
 const StPage = styled.div`
   display: flex;

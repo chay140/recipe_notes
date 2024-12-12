@@ -1,9 +1,7 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { useWeather } from '../../api/weather';
 import LoadingSpinner from '../common/LoadingSpinner';
-import Button from '../common/Button';
 import { useUserStore } from '../../zustand/userStore';
 import ProfileMenu from './ProfileMenu';
 
@@ -26,15 +24,22 @@ const HeaderMenu = () => {
 
   return (
     <StMenu>
-      {isLoading ? (
+      {isLoading && !error ? (
         <LoadingSpinner />
       ) : (
         <StWeather>
-          <img src={iconUrl} />
-          <p>{weatherData?.main?.temp}°C</p>
+          <StWeatherIcon src={iconUrl} />
+          <StWeatherContent>
+            <p>{weatherData?.main?.temp}°C</p>
+            <p>{weatherData.weather[0].description}</p>
+          </StWeatherContent>
         </StWeather>
       )}
-      {!isAuthenticated ? <Button buttonHandler={moveToLogin} label="로그인" /> : <ProfileMenu />}
+      {!isAuthenticated ? (
+        <StButton onClick={moveToLogin}>로그인</StButton>
+      ) : (
+        <ProfileMenu />
+      )}
     </StMenu>
   );
 };
@@ -50,12 +55,11 @@ const StMenu = styled.div`
 const StWeather = styled.div`
   background-color: var(--color-primary);
   border-radius: var(--default-radius);
-  margin-right: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
+  padding: 10px;
 
   img {
     width: 50px;
@@ -63,9 +67,34 @@ const StWeather = styled.div`
     margin: 0;
     filter: drop-shadow(0 0 0.25rem var(--color-gray2));
   }
+`;
 
+const StWeatherIcon = styled.div`
+  background-image: url(${(props) => props.src});
+  background-position: center;
+  background-size: 150%;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  filter: drop-shadow(0 0 0.25rem var(--color-gray2));
+`;
+
+const StWeatherContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  line-height: 1.5;
   p {
     font-size: 12px;
-    margin-bottom: 5px;
+    margin-top: 2px;
   }
+`;
+
+const StButton = styled.button`
+  background-color: var(--color-third);
+  color: var(--color-gray7);
+
+  padding: 15px 10px 10px;
+  border-radius: var(--default-radius);
 `;

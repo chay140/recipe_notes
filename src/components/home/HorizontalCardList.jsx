@@ -27,7 +27,7 @@ export default HorizontalCardList;
 const StListSection = styled.div`
   display: flex;
   flex-direction: column;
-
+  margin: 20px 0px;
 	width: var(--inner-width);
 `
 

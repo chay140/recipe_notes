@@ -30,7 +30,6 @@ const StFooter = styled.footer`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-content: center;
 
   width: 100%;
   height: 50px;

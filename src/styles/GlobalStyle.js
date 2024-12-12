@@ -49,8 +49,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   main { 
-    padding: 120px 80px;
+    padding: 150px 80px 100px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
 	body {
